@@ -15,15 +15,16 @@ number_of_people = 213
 cur_time = str(datetime.now().time().strftime("%H:%M:%S:%f"))
 cur_date = date.today().strftime("/%Y/%m/%d/")
 
-def update_time():
-    # cur_time = str(int(time.time()))
-    cur_time = str(datetime.now().time().strftime("%H:%M:%S"))
-    cur_date = date.today().strftime("/%Y/%m/%d/")
+# def update_time():
+#     # cur_time = str(int(time.time()))
+#     cur_time = str(datetime.now().time().strftime("%H:%M:%S:%f"))
+#     cur_date = date.today().strftime("/%Y/%m/%d/")
 
 #creates new folder for number of people at that time
 def update_db(num_people):
-    update_time()
-
+    # update_time()
+    cur_time = str(datetime.now().time().strftime("%H:%M:%S:%f"))
+    cur_date = date.today().strftime("/%Y/%m/%d/")
     index = cur_date + "/" + cur_time
 
     firebase.post(index, num_people)
@@ -31,6 +32,8 @@ def update_db(num_people):
 
 
 def graph():
+    cur_time = str(datetime.now().time().strftime("%H:%M:%S:%f"))
+    cur_date = date.today().strftime("/%Y/%m/%d/")
     update_time()
     results = firebase.get(cur_date, None)
 
