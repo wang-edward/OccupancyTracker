@@ -1,7 +1,12 @@
 import cv2
 import mediapipe as mp
-import datetime
-import server #firebase code
+import winsound
+import server
+import threading
+
+def play_sound():
+    audio_file = "max.wav"
+    winsound.PlaySound(audio_file, winsound.SND_FILENAME)
 
 cap = cv2.VideoCapture("walk.mp4")
 
@@ -37,12 +42,23 @@ while True:
                 number_of_people += 1
             else:
                 number_of_people -= 1
-            update_db(number_of_people)
+
+            if number_of_people == OCCUPANCY_LIMIT:
+                cv2.rectangle(img, (0,0), (1920, 1080), (0, 0, 255), -1)
+                cv2.putText(img, "Max Occupancy Reached", (150, 500), cv2.FONT_HERSHEY_PLAIN, 8, (255, 255, 255), 10)
+                cv2.imshow("MediaPipe Pose", img)
+                cv2.waitKey(1)
+
+                play_sound()
+
+            t = threading.Thread(target=server.update_db, args = [number_of_people])
+            t.start()
+
             in_frame = True
             
     else:
         in_frame = False
-
+    
     cv2.putText(img, "Number of people: " + str(number_of_people), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 3)
     cv2.putText(img, "Enter -->", (850, 1000), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
     cv2.putText(img, "<-- Exit", (850, 950), cv2.FONT_HERSHEY_PLAIN, 3, (0, 0, 255), 3)
