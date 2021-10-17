@@ -6,7 +6,8 @@ There are many facilities with a limit of how many people can enter. Possibly be
 ## How we built it 
 - OpenCV for reading from the input stream and drawing to the screen
 - MediaPipe for pose detection and tracking
-- FireBase to store our data and create graphs
+- FireBase to store our data 
+- Matplotlib to create graphs
 
 <a><img src="https://github.com/Shayan925/OccupancyTracker/blob/main/test.png" title="Tracker" /></a>
 
@@ -19,3 +20,7 @@ Even though we used MediaPipe for the object detection and pose estimation, dete
 - There is a lot of advanced mathematics that goes into determining the direction of a moving object in computer vision.
 - First time using the FireBase database in one of our projects.
 - Always something to learn.
+## Future additions
+- We might create an embed that users could put on their website that displays
+    - Current occupancy (as a % of maximum)
+    - Graph of a regular business day (busiest hours)
