@@ -1,6 +1,7 @@
 import cv2
 import mediapipe as mp
 import datetime
+import server #firebase code
 
 cap = cv2.VideoCapture("walk.mp4")
 
@@ -36,7 +37,7 @@ while True:
                 number_of_people += 1
             else:
                 number_of_people -= 1
-
+            update_db(number_of_people)
             in_frame = True
             
     else:
