@@ -47,11 +47,12 @@ def graph():
     for i in answer_num:
         print(i)
 
-    # fig, ax = plt.subplots()
-    # ax.plot(answer_time,answer_num)
+    fig, ax = plt.subplots()
+    ax.plot(answer_time,answer_num)
+    plt.show()
     
 
 # testing!!! -------------------------------------------------
 
 # update_db(number_of_people)
-# graph()
+graph()
