@@ -68,6 +68,7 @@ while True:
     if cv2.getWindowProperty("MediaPipe Pose", cv2.WND_PROP_VISIBLE) < 1: 
         break
 
+server.graph()
 cap.release()
 cv2.destroyAllWindows()
 
