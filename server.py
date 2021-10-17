@@ -39,5 +39,3 @@ def graph():
     ax.xaxis_date()
     fig.autofmt_xdate()
     plt.show()
-    
-graph()
