@@ -1,5 +1,7 @@
 # Hack the Valley 2021 Project
 
+<a><img src="https://github.com/Shayan925/OccupancyTracker/blob/main/test.png" title="Tracker" /></a>
+
 ## Inspiration
 There are many facilities with a limit of how many people can enter. Possibly because of COVID-19 (health-restrictions) or there is simply not enough space. At our high-school's library there is a 140 person limit and it inspired us to make an occupancy tracker to try and help the librarians keep track of the number of students entering and leaving, so they don't have to manually do it. This software could also be used to gather information about customers at retail stores and gain business insight such as the busiest hours.
 
@@ -8,8 +10,6 @@ There are many facilities with a limit of how many people can enter. Possibly be
 - MediaPipe for pose detection and tracking
 - FireBase to store our data 
 - Matplotlib to create graphs
-
-<a><img src="https://github.com/Shayan925/OccupancyTracker/blob/main/test.png" title="Tracker" /></a>
 
 <a><img src="https://github.com/Shayan925/OccupancyTracker/blob/main/image_2021-10-16_235658.png" title="Tracker" /></a>
 
